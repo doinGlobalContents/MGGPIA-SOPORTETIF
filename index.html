@@ -51,6 +51,7 @@
             gap: 40px;
             max-width: 90%;
             flex: 1;
+            margin-top: 50px 
         }
 
         .chatbot-container {
@@ -175,7 +176,7 @@
 
         <div class="avatars-container">
             <div class="avatar-container active" id="avatar1">
-                <h2>Coordinación Cursado</h2>
+                <h2>Soporte TIF</h2>
                <script>
                 !function(window){
                     const host="https://labs.heygen.com",
@@ -228,75 +229,12 @@
                 }(globalThis);
                 </script>
             </div>
-
-            <div class="avatar-container" id="avatar2">
-                <h2>Soporte TIF</h2>
-               <script>
-                !function(window){
-                    const host="https://labs.heygen.com",
-                    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiIyNDdjNTFjMGM5MDc0NDI3YjNmMWZlNTBm%0D%0AZTJlYTg5YSIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzI0N2M1MWMwYzkwNzQ0MjdiM2YxZmU1MGZlMmVhODlhL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6Ijcy%0D%0AZjVkOGVlZjZlODRhODA4MzAyOWJhNDFmODczM2U0IiwidXNlcm5hbWUiOiI5Mzc0NGZkZTc1NGY0%0D%0AY2ZjOTQzNjA2NTU4Y2M3NjZlZSJ9&inIFrame=1",
-                    clientWidth=document.body.clientWidth,
-                    wrapDiv=document.createElement("div");
-                    wrapDiv.id="heygen-streaming-embed";
-                    const container=document.createElement("div");
-                    container.id="heygen-streaming-container";
-                    const stylesheet=document.createElement("style");
-                    stylesheet.innerHTML=`
-                        #heygen-streaming-embed {
-                            z-index: 1;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 0;
-                            border: none;
-                            box-shadow: none;
-                            transition: none;
-                            overflow: hidden;
-                        }
-                        #heygen-streaming-container {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        #heygen-streaming-container iframe {
-                            width: 100%;
-                            height: 100%;
-                            border: none;
-                        }
-                    `;
-                    const iframe=document.createElement("iframe");
-                    iframe.allowFullscreen=!1;
-                    iframe.title="Streaming Embed";
-                    iframe.role="dialog";
-                    iframe.allow="microphone";
-                    iframe.src=url;
-                    let visible=!1,initial=!1;
-                    window.addEventListener("message",(e=>{
-                        e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
-                            "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
-                            "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
-                            "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
-                        )
-                    }));
-                    container.appendChild(iframe);
-                    wrapDiv.appendChild(stylesheet);
-                    wrapDiv.appendChild(container);
-                    document.getElementById("avatar2").appendChild(wrapDiv);
-                }(globalThis);
-                </script>
-            </div>
+         
         </div>
     </div>
      <footer>
         Este asistente virtual es un prototipo desarrollado en el laboratorio de investigación de AI Academy by doinGlobal.
     </footer>
-
-    <script>
-        function showAvatar(avatarId) {
-            document.querySelectorAll('.avatar-container').forEach(container => {
-                container.classList.remove('active');
-            });
-
-            document.getElementById(avatarId).classList.add('active');
-        }
-    </script>
+ 
 </body>
 </html>
